@@ -33,10 +33,10 @@ public class LoginValidation extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		if(username.equals("tommy") && password.equals("trojan")) {
-			//redirect to collage input page
+			response.sendRedirect("InputServlet.jsp");
 		}
 		else {
-			//redirect back to homepage
+			response.sendRedirect("login.html");
 		}
 		
 		

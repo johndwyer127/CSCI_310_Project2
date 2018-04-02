@@ -8,10 +8,10 @@
   <body>
 
   <input type ="text" name ="topic" placeholder="Enter topic"><br>
-  <input type ="text" name = "topic" placeholder = "Enter shape"><br>
-  Collage Options <select></select><br>
-  <button> Save to History</button></br>
-  <button>Build Collage</button>
+  <input type ="text" name = "shape" placeholder = "Enter shape"><br>
+  Collage Options <select name = "options"></select><br>
+  <button name = "save"> Save to History</button></br>
+  <button name = "build">Build Collage</button>
 
   </body>
 		</div>

@@ -14,7 +14,5 @@
   <button name = "build">Build Collage</button>
 
   </body>
-		</div>
-	</form>
-</body>
+
 </html>

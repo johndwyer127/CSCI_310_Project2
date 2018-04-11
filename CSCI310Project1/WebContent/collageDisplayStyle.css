@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+body {
+	background-color: #ffffff;
+}
+
+#wrapper {
+	clear:both;
+}
+
+#title {
+	font-size: 24px;
+	font-color: black;
+	text-align: center;
+}
+
+#inputStuff {
+ 	padding: 20px;
+ 	position:relative;
+	top: 50%;
+ 	left: 37%;	
+}
+#inputButton {
+	background-color: #a9a9a9;
+	color: white;
+}
+#exportButton {
+	background-color: #a9a9a9;
+	color: white;
+}
+
+#collageSpace {
+	width: 800px;
+	height:600px;
+	margin: auto;
+}
+
+#previousCollages {
+	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#innerPrevCollages {
+
+}

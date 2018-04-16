@@ -34,15 +34,16 @@ public final class Collage {
 		return angles;
 
 	}
-	
-	
-	
-//	// This code will copy part of one picture to another picture 
+
+
+
+//	// This code will copy part of one picture to another picture
 //	public static Picture makeCollage (Picture pict, Picture pict2, Picture pict3)
 //	{
+//making sure all the collage
 //		int xStart, xEnd;
 //		int yStart, yEnd;
-//		   
+//
 //		/* xStart = 250;
 //		yStart = 150;
 //		xEnd = 400;
@@ -52,11 +53,11 @@ public final class Collage {
 //		int xIndex, xIndex1, xIndex2;
 //		int yIndex, yIndex1, yIndex2;
 //		int pixel1, pixel2;
-//		    
+//
 //		// get width and height of picture
 //		int width = pict.getWidth();
 //		int height = pict.getHeight();
-//		
+//
 //		// create a bit "empty canvas" for new picture
 //		int width2 = width + pict2.getWidth() + pict3.getWidth();
 //		int height2 = height + pict2.getHeight();
@@ -66,36 +67,36 @@ public final class Collage {
 //		// copy pict to pictNew
 //		for ( xIndex = 0 ; xIndex < width ; xIndex = xIndex + 1 ) {
 //		    for ( yIndex = 0 ; yIndex < height ; yIndex = yIndex + 1 ) {
-//		         // get the pixel from the original picture base on X,Y position 
+//		         // get the pixel from the original picture base on X,Y position
 //		         xIndex1 = xIndex;
 //		         yIndex1 = yIndex;
 //		         pixel1 = pict.getPixel (xIndex1, yIndex1);
-//		         
+//
 //		         pictNew.setPixel(xIndex, yIndex, pixel1);
 //		        }
 //		   }
-//		   
+//
 //		   int widthA = pict2.getWidth();
 //		   int heightA = pict2.getHeight();
-//		   
+//
 //		   // create a for loop to access/manipulate each pixel for the lower image
 //		   // i.e., append pict2 to be below pict in pictNew
 //		   for ( xIndex = 0 ; xIndex < widthA ; xIndex = xIndex + 1 )
 //		   {
 //		      for ( yIndex = 0 ; yIndex < heightA ; yIndex = yIndex + 1 )
 //		        {
-//		         // get the pixel from the original picture base on X,Y position 
+//		         // get the pixel from the original picture base on X,Y position
 //		         xIndex1 = xIndex;
 //		         yIndex1 = yIndex;
 //		         pixel1 = pict2.getPixel (xIndex1, yIndex1);
-//		      
+//
 //		         // determine the corresponding pixel in the new picture
 //		         xIndex2 = xIndex ;
 //		         yIndex2 = yIndex + height;
 //		         pictNew.setPixel (xIndex2, yIndex2, pixel1);
 //		        }
 //		   }
-//		   
+//
 //		   int widthB = pict3.getWidth();
 //		   int heightB = pict3.getHeight();
 //		   // create a for loop to access/manipulate each pixel for the lower image
@@ -104,52 +105,52 @@ public final class Collage {
 //		   {
 //		      for ( yIndex = 0 ; yIndex < heightB ; yIndex = yIndex + 1 )
 //		        {
-//		         // get the pixel from the original picture base on X,Y position 
+//		         // get the pixel from the original picture base on X,Y position
 //		         xIndex1 = xIndex;
 //		         yIndex1 = yIndex;
 //		         pixel1 = pict3.getPixel (xIndex1, yIndex1);
-//		      
+//
 //		         // determine the corresponding pixel in the new picture
 //		         xIndex2 = xIndex + widthA;
 //		         yIndex2 = yIndex + height;
 //		         pictNew.setPixel (xIndex2, yIndex2, pixel1);
 //		        }
 //		   }
-//		   
+//
 //		   // create a for loop to access/manipulate each pixel for the lower image
-//		   // add pict2 to the right once more	   
+//		   // add pict2 to the right once more
 //		   for ( xIndex = 0 ; xIndex < widthA ; xIndex = xIndex + 1 )
 //		   {
 //		      for ( yIndex = 0 ; yIndex < heightA ; yIndex = yIndex + 1 )
 //		        {
-//		         // get the pixel from the original picture base on X,Y position 
+//		         // get the pixel from the original picture base on X,Y position
 //		         xIndex1 = xIndex;
 //		         yIndex1 = yIndex;
 //		         pixel1 = pict2.getPixel(xIndex1, yIndex1);
-//		      
+//
 //		         // determine the corresponding pixel in the new picture
 //		         xIndex2 = xIndex + widthA + widthB;
 //		         yIndex2 = yIndex + height;
-//		         pictNew.setPixel (xIndex2, yIndex2, pixel1);  
+//		         pictNew.setPixel (xIndex2, yIndex2, pixel1);
 //		        }
 //		   }
-//		   
+//
 //		return pictNew;
-//	} 
-	
-	
+//	}
+
+
 	public static Picture make30Collage (int new_width, int new_height, List<String> nameList, List<Integer> angelList) {
 		Picture pictNew = new Picture (new_width, new_height);
-		
+
 		int row = 5;
 		int col = 6;
-		
+
 		// decide the width and height of each component picture
 		// each is 1/20th of the new picture
 		int width = (int)Math.ceil(new_width / 5);
 		int height = (int)Math.ceil(new_height / 4);
 		// System.out.println("width: " + width + ", height: " + height);
-		
+
 		List<Picture> pictList = new ArrayList<Picture>();
 		for (int k = 0; k < nameList.size(); k++) {
 			String name = nameList.get(k);
@@ -159,18 +160,18 @@ public final class Collage {
 			int angel = angelList.get(k).intValue();
 			if ( angel != 0 )
 				pict.rotateImage(angel);
-			
+
 			pictList.add(pict);
 		}
-		
+
 		// decide the area each component picture needs to cover
 		int cw = (int)Math.ceil(new_width / col);
 		int ch = (int)Math.ceil(new_height / row);
 		int diffw = (int)Math.ceil((width - cw) / 4);
 		int diffh = (int)Math.ceil((height - ch) / 4);
-		
+
 		// System.out.println(cw + "," + ch + "," + diffw + "," + diffh);
-		
+
 		// determine start position of each picture
 		List<Integer> x_arr = new ArrayList<Integer>();
 		List<Integer> y_arr = new ArrayList<Integer>();
@@ -185,7 +186,7 @@ public final class Collage {
 				y_arr.add(y);
 			}
 		}
-		
+
 		// shuffle pictures
 		int count = 30;
 		int[] orderList = new int[count];
@@ -198,7 +199,7 @@ public final class Collage {
 		    orderList[i] = orderList[j];
 		    orderList[j] = temp;
 		}
-		
+
 		// add each component picture to new picture
 		for (int n = 0; n < count; n++) {
 			int k = orderList[n];
@@ -208,15 +209,15 @@ public final class Collage {
 			int idx = k % pictList.size();
 			Picture pict = pictList.get(idx);
 
-	
+
 			int start_x = x_arr.get(k).intValue();
 			int start_y = y_arr.get(k).intValue();
 			start_x -= pict.getXPos();
 			start_y -= pict.getYPos();
-			
+
 			System.out.println("start " + n + ":" + start_x + ", " + start_y);
 			System.out.println(pict.getXPos() + ", " + pict.getYPos());
-			
+
 			for (int i = 0; i < pict.getWidth(); i++) {
 				int x = i + start_x;
 				for (int j = 0; j < pict.getHeight(); j++) {
@@ -227,7 +228,7 @@ public final class Collage {
 						pictNew.setPixel(x, y, pixel);
 				}
 			}
-			
+
 		}
 		return pictNew;
 	}

@@ -35,16 +35,16 @@ public class BuildCollage extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String topic = request.getParameter("topic");
-		System.out.println("topic= " + topic);
+		System.out.println("topic= " + topic); //Debug that topic is being correctly passed from initial page
 		response.setContentType("text/html"); //can do text/json, in servlets usually will be text/html
 		Collage newCollage = new Collage();
 		List<String> urls = newCollage.getUrls(topic);
-//		for (int i=0; i < urls.size(); i++) {
+//		for (int i=0; i < urls.size(); i++) { //Prints off the image list to check size and validity of image
 //			System.out.println(urls.get(i));
 //		}
-		Picture collageImage = Collage.make30Collage(800, 600, urls, newCollage.getAngles());
+		Picture collageImage = Collage.make30Collage(800, 600, urls, newCollage.getAngles()); //Builds the collage
 
-		UserClass.numPreviousSearches++;
+		UserClass.numPreviousSearches++; //Updates the array size for sake of previous collages
 		
 		if (UserClass.getNumPreviousSearches() != 0) {
 			UserClass.addPreviousCollage(); //add old collage to list of historical collages
@@ -54,12 +54,12 @@ public class BuildCollage extends HttpServlet {
 		collageImage.setTopic(topic);
 		UserClass.setCurrentCollage(collageImage); //update current collage to the new search
 		List<Picture> history = UserClass.getCollages();
-		System.out.println("history size: " + history.size());
+		System.out.println("history size: " + history.size()); //Checks if previous collage size is correct
 		request.getSession().setAttribute("collageImage", collageImage);
 		request.getSession().setAttribute("topic", topic);
 		request.getSession().setAttribute("history", history);
 		//RequestDispatcher dispatch = getServletContext().getRequestDispatcher("/CollageDisplay.jsp");
-		RequestDispatcher dispatch = request.getRequestDispatcher("/CollageDisplay.jsp");
+		RequestDispatcher dispatch = request.getRequestDispatcher("/CollageDisplay.jsp"); //Forwards to display jsp
 		dispatch.forward(request, response);
 	}
 

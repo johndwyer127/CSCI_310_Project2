@@ -75,7 +75,7 @@
 		</div>
 	
 	
-	
+	<!-- build collage button -->
 		<form method = "GET" action="BuildCollage" >
 			<div id="inputStuff">
 				<br />

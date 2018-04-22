@@ -32,6 +32,9 @@ Scenario: Save Box
 
 	Then I should see a checkbox named "saveBox"
 
-Scenario: Collage matches topic input
+Scenario: Collage matches topic and shape input
 
-	  Then I should see a collage that matches the topic input
+		When I enter "dog" into the topic box
+		And I enter "usc" into the shape box
+		And press Build Collage
+	  Then I should see a collage for the topic "dog" and in the shape of "usc"

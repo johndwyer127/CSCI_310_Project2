@@ -31,4 +31,7 @@ Scenario: Rotation Box
 Scenario: Save Box
 
 	Then I should see a checkbox named "saveBox"
-	
+
+Scenario: Collage matches topic input
+
+	  Then I should see a collage that matches the topic input

@@ -24,18 +24,19 @@ end
 
 Then(/^I should see a checkbox named "rotationsBox"$/) do
   expect(page).to have_field("rotationsBox")
-
+end
 Then(/^I should see a checkbox named "saveBox"$/) do
   expect(page).to have_field("saveBox")
-
+end
 When (/^I enter "([^"]*)" in the topic box$/) do |topicArg|
   fill_in('topic', :with => topicArg)
-
+end
 When (/^I enter "([^"]*)") in the shape box$/) do |shapeArg|
   fill_in('shape', :with => shapeArg)
-
+end
 When (/^press Build Collage$/) do
   click_on 'Build Collage'
-
+end
 Then(/^I should see a collage for the topic "([^"]*)" and in the shape of "([^"]*)") do |arg1|
   expect(page).to have_selector("img", :alt => arg1)
+end

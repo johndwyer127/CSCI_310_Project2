@@ -4,6 +4,10 @@ Background:
 
 	Given I am on the main page
 
+Scenario: Secure Connection
+
+	Then I should have a secure connection
+
 Scenario: Topic Box
 
 	Then I should see a text field named "topic"

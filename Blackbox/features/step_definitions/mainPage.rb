@@ -2,6 +2,10 @@ Given(/^I am on the main page"$/)
   visit #url
 end
 
+Then(/^I should have a secure connection$/) do
+  expect(page).to have_current_path("https", url: true)
+end
+
 Then(/^I should see a text field named "topic"/) do
   expect(page).to have_field("topic")
 end

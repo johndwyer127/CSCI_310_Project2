@@ -1,4 +1,4 @@
-package CSCI310_Project2;
+package servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -32,7 +32,7 @@ public class LoginValidation extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		if(username.equals("tommy") && password.equals("trojan")) {
+		if(username != null && password != null && username.equals("tommy") && password.equals("trojan")) {
 			response.sendRedirect("InputServlet.jsp");
 		}
 		else {

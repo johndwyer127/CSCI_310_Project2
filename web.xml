@@ -1,0 +1,18 @@
+<r>
+	<servlet>
+	    <servlet-name>LoginValidation</servlet-name>
+	    <servlet-class>servlet.LoginValidation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>LoginValidation</servlet-name>
+	    <url-pattern>/LoginValidation</url-pattern>
+	</servlet-mapping>
+	<servlet>
+	    <servlet-name>BuildCollage</servlet-name>
+	    <servlet-class>servlet.BuildCollage</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>BuildCollage</servlet-name>
+	    <url-pattern>/BuildCollage</url-pattern>
+	</servlet-mapping>
+</r>

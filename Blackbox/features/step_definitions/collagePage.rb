@@ -16,3 +16,4 @@ end
 
 Then(/^I should see a gallery for past collages created$/) do
   expect(page).to have_selector("div", :id =>"previousCollage")
+end

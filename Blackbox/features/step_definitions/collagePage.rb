@@ -13,3 +13,6 @@ end
 Then(/^I should have a secure connection$/) do
   expect(page).to have_current_path("https", url: true)
 end
+
+Then(/^I should see a gallery for past collages created$/) do
+  expect(page).to have_selector("div", :id =>"previousCollage")

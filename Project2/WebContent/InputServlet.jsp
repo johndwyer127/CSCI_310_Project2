@@ -11,7 +11,7 @@
  	window.location.href = pageURL;
  }
 </script>
-
+<!--Input function -->
 <script type="text/javascript">
 
 function enterInput(pageURL) {

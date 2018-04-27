@@ -46,6 +46,7 @@ When (/^press Build Collage$/) do
 end
 Then(/^I should see a collage for the topic "([^"]*)" and in the shape of "([^"]*)"$/) do |string, string2|
   expect(page).to have_content string
+  expect(page).to have_content string2
 end
 
 

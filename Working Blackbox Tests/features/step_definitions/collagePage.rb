@@ -1,9 +1,10 @@
 Given(/^I am on the collage display page$/) do
-  visit 'http://localhost:8080/CSCI310Project1/BuildCollage'
+  visit 'http://localhost:8080/CSCI310Project1/CollageDisplay.jsp'
 end
 
 Then(/^I should see an export as png button$/) do
-  expect(page).to have_selector("button", :id =>"exportButtonPNG")
+    expect(page).find_by_id('exportButtonPNG').value = "exportButtonPNG"
+  # expect(page).to have_selector("button", :id =>"exportButtonPNG")
 end
 
 Then(/^I should see an export as pdf button$/) do

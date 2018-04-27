@@ -1,5 +1,5 @@
 Given(/^I am on the collage display page$/) do
-  visit #put servlet address here
+  visit 'http://localhost:8080/CSCI310Project1/BuildCollage'
 end
 
 Then(/^I should see an export as png button$/) do

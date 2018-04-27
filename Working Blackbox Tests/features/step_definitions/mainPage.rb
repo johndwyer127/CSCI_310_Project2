@@ -1,8 +1,8 @@
-require 'selenium-webdriver'
+# require 'selenium-webdriver'
 
 Given(/^I am on the main page$/) do
-    @browser = Selenium::WebDriver.for :chrome
-    @browser.navigate.to 'http://google.com'
+    # @browser = Selenium::WebDriver.for :chrome
+    visit 'http://localhost:8080/CSCI310Project1/InputServlet2.jsp'
 end
 
 Then(/^I should see a text field named "topic"/) do
@@ -44,7 +44,11 @@ end
 When (/^press Build Collage$/) do
   click_on 'Build Collage'
 end
-
-Then(/^I should see a collage for the topic "([^"]*)" and in the shape of "([^"]*)"$/) do |arg1|
-  expect(page).to have_selector("img", :alt => arg1)
+Then(/^I should see a collage for the topic "([^"]*)" and in the shape of "([^"]*)"$/) do |string, string2|
+  expect(page).to have_content string
 end
+
+
+# Then(/^I should see a collage for the topic "([^"]*)" and in the shape of "([^"]*)"$/) do |arg1|
+#   expect(page).to have_selector("img", :alt => arg1)
+# end

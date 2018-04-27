@@ -1,4 +1,7 @@
+require('capybara')
 require('capybara/cucumber')
+require('r_spec')
+
 
 
 
